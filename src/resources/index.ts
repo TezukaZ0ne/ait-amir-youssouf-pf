@@ -5,6 +5,7 @@ export {
   newsletter,
   home,
   about,
+  professionalCard,
   parcours,
   contact,
   blog,
