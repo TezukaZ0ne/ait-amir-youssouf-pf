@@ -1,22 +1,22 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Contact, Gallery, Home, Newsletter, Parcours, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-  locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
+  firstName: "Youssouf",
+  lastName: "Ait Amir",
+  name: `Youssouf Ait Amir`,
+  role: "Étudiant en Cybersécurité informatique et Électronique",
+  avatar: "/images/avatar.jpg", // TODO: remplacer par une vraie photo
+  email: "youssouf.tzvn@gmail.com",
+  location: "Europe/Paris",
+  languages: ["Français", "Anglais", "Allemand"],
+  locale: "fr",
 };
 
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false,
+  title: <></>,
+  description: <></>,
 };
 
 const social: Social = [
@@ -26,27 +26,16 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/TezukaZ0ne",
     essential: true,
   },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
-  },
+  // TODO: ajouter le lien LinkedIn une fois fourni
+  // {
+  //   name: "LinkedIn",
+  //   icon: "linkedin",
+  //   link: "",
+  //   essential: true,
+  // },
   {
     name: "Email",
     icon: "email",
@@ -58,180 +47,181 @@ const social: Social = [
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  label: "Accueil",
+  title: `Portfolio de ${person.name}`,
+  description: `Portfolio de ${person.name}, ${person.role.toLowerCase()}`,
+  headline: <>Bienvenue sur mon portfolio</>,
   featured: {
-    display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    display: false,
+    title: <></>,
+    href: "/work",
   },
   subline: (
     <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} at{" "}
-      <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+      Je m'appelle {person.firstName}, {person.role.toLowerCase()}.
     </>
   ),
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "À propos",
+  title: `À propos – ${person.name}`,
+  description: `${person.name}, ${person.role.toLowerCase()}`,
   tableOfContent: {
-    display: true,
+    display: false,
     subItems: false,
   },
   avatar: {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
+  // Section volontairement vide pour le moment : la "professional card"
+  // sera intégrée ici une fois les consignes reçues.
   intro: {
-    display: true,
-    title: "Introduction",
-    description: (
-      <>
-        {person.firstName} is a {person.location.split("/")[1]?.replace("_", " ")}-based {person.role.toLowerCase()} with a passion for transforming complex challenges
-        into simple, elegant design solutions. Their work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
-      </>
-    ),
+    display: false,
+    title: "",
+    description: <></>,
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
-    experiences: [
+    display: false, // le contenu Expérience se trouve maintenant sur la page Parcours/Compétences
+    title: "",
+    experiences: [],
+  },
+  studies: {
+    display: false, // le contenu Formation se trouve maintenant sur la page Parcours/Compétences
+    title: "",
+    institutions: [],
+  },
+  technical: {
+    display: false, // le contenu Compétences se trouve maintenant sur la page Parcours/Compétences
+    title: "",
+    skills: [],
+  },
+};
+
+const parcours: Parcours = {
+  path: "/parcours",
+  label: "Parcours & Compétences",
+  title: `Parcours & Compétences – ${person.name}`,
+  description: `Formation, expérience professionnelle et compétences de ${person.name}`,
+  studies: {
+    display: true,
+    title: "Formation",
+    institutions: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
-        achievements: [
+        name: "BTS Cybersécurité informatique et Electronique — Option B : Électronique et Réseaux",
+        description: (
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+            LGT Baggio, Lille (59) · 2024 – 2026
+            <br />
+            Formation exigeant rigueur, méthode et respect des procédures. Développement de
+            l'autonomie, du travail en équipe et de la capacité d'analyse.
+          </>
+        ),
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        name: "BUT Sciences des Données — Réorientation",
+        description: (
+          <>
+            Université de Lille (59) · 2023 – 2024
+            <br />
+            Statistiques et probabilités : application des lois de probabilités à l'analyse de
+            données. Bureautique : Microsoft Office (Word, Excel, PowerPoint, Access). Capacité
+            d'adaptation et d'organisation face à des exigences académiques variées.
+          </>
+        ),
+      },
+      {
+        name: "Baccalauréat Général — Spécialités Mathématiques & NSI",
+        description: <>Lycée Faidherbe, Lille (59) · 2022 – 2023 · Admis</>,
+      },
+    ],
+  },
+  work: {
+    display: true,
+    title: "Expérience professionnelle",
+    experiences: [
+      {
+        company: "Konica Minolta Business Solutions France",
+        timeframe: "19/05 – 28/06/2025 · 6 semaines",
+        role: "Stage PFMP — Support technique & relation client (Saighin-en-Mélantois, 59)",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Rigueur et sang-froid sur des interventions à enjeux réels, sans marge d'erreur
+            tolérée.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Prise en main rapide de missions concrètes sur des outils et équipements inconnus.
+          </>,
+          <>
+            Sens du service, ponctualité et esprit d'équipe reconnus par l'entreprise d'accueil.
           </>,
         ],
         images: [],
       },
     ],
   },
-  studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
-    institutions: [
-      {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
-    ],
-  },
-  technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+  skills: {
+    display: true,
+    title: "Compétences",
     skills: [
       {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Sens du contact",
+        description: <>Accueil, écoute et amabilité envers la clientèle.</>,
+        tags: [],
+        images: [],
       },
       {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Rigueur & organisation",
+        description: <>Fiabilité dans l'exécution des tâches confiées.</>,
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Esprit d'équipe",
+        description: <>Habitué au travail collectif et à l'entraide.</>,
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Réactivité",
+        description: <>Capacité à gérer plusieurs tâches et à travailler sous rythme soutenu.</>,
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Ponctualité & fiabilité",
+        description: <>Assiduité et respect des horaires.</>,
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Polyvalence",
+        description: <>Adaptation rapide à de nouvelles consignes et environnements.</>,
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Langues",
+        description: <>Anglais : B1 certifié · Allemand : A2+ certifié.</>,
+        tags: [],
+        images: [],
       },
     ],
   },
+};
+
+const contact: Contact = {
+  path: "/contact",
+  label: "Contact",
+  title: `Contact – ${person.name}`,
+  description: `Coordonnées de ${person.name}`,
+  phone: "07 80 75 07 19",
+  location: "La Madeleine (59)",
 };
 
 const blog: Blog = {
@@ -245,11 +235,11 @@ const blog: Blog = {
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  label: "Projets",
+  title: `Projets – ${person.name}`,
+  description: `Projets réalisés dans le cadre du parcours informatique de ${person.name}`,
+  // Créer une nouvelle page projet en ajoutant un fichier .mdx dans app/work/projects
+  // Tous les projets sont listés sur / et /work
 };
 
 const gallery: Gallery = {
@@ -303,4 +293,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, parcours, contact, blog, work, gallery };

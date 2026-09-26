@@ -218,6 +218,30 @@ export interface About extends BasePageConfig {
 }
 
 /**
+ * Parcours / Compétences page configuration.
+ * @description Configuration for the Parcours page: education, professional experience and skills.
+ */
+export interface Parcours extends BasePageConfig {
+  /** Work experience section */
+  work: About["work"];
+  /** Studies/education section */
+  studies: About["studies"];
+  /** Skills section (soft skills, languages, technical skills) */
+  skills: About["technical"];
+}
+
+/**
+ * Contact page configuration.
+ * @description Configuration for the Contact page: phone, email, social links and location.
+ */
+export interface Contact extends BasePageConfig {
+  /** Phone number to display, e.g. "+33 7 80 75 07 19" */
+  phone?: string;
+  /** Location label to display, e.g. "La Madeleine (59)" */
+  location?: string;
+}
+
+/**
  * Blog page configuration.
  * @description Configuration for the Blog page, including metadata and navigation label.
  */

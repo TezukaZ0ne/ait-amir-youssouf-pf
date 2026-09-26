@@ -5,6 +5,8 @@ export {
   newsletter,
   home,
   about,
+  parcours,
+  contact,
   blog,
   work,
   gallery,

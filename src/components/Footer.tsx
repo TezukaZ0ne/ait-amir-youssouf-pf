@@ -50,3 +50,11 @@ export const Footer = () => {
     </Row>
   );
 };
+
+export const TechFooter = () => (
+  <Row fillWidth horizontal="center" paddingBottom="24">
+    <Text variant="body-default-xs" onBackground="neutral-weak">
+      Développé avec Next.js & Once UI · Déployé sur Vercel
+    </Text>
+  </Row>
+);
