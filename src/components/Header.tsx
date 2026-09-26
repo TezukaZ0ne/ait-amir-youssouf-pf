@@ -26,6 +26,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
         minute: "2-digit",
         second: "2-digit",
         hour12: false,
+        hourCycle: "h23",
       };
       const timeString = new Intl.DateTimeFormat(locale, options).format(now);
       setCurrentTime(timeString);
@@ -73,7 +74,9 @@ export const Header = () => {
         }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
+          {display.location && (
+            <Row s={{ hide: true }}>{person.locationLabel ?? person.location}</Row>
+          )}
         </Row>
         <Row fillWidth horizontal="center">
           <Row
