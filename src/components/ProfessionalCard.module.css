@@ -3,7 +3,11 @@
   justify-content: center;
   align-items: center;
   padding: 24px 0;
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-lato), "Lato", sans-serif;
+}
+
+.container * {
+  font-family: var(--font-lato), "Lato", sans-serif;
 }
 
 .cardContainer {

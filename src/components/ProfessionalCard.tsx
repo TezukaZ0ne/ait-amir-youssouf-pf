@@ -1,6 +1,15 @@
+import { Lato } from "next/font/google";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
 import styles from "./ProfessionalCard.module.css";
+
+// Même police que professional-card-astro (chargée via Google Fonts là-bas)
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  display: "swap",
+  variable: "--font-lato",
+});
 
 interface ProfessionalCardProps {
   name: string;
@@ -22,7 +31,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({
   profileImage,
 }) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${lato.className} ${lato.variable}`}>
       <div className={styles.cardContainer}>
         <div className={styles.descripcion}>
           <h1>{name}</h1>
