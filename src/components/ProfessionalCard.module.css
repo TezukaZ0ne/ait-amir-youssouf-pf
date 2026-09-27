@@ -32,6 +32,7 @@
 .descripcion h1 {
   font-weight: 400;
   margin: 0;
+  line-height: normal;
 }
 
 .descripcion h2 {
@@ -45,6 +46,7 @@
   font-weight: 300;
   font-size: 17px;
   white-space: pre-line;
+  line-height: normal;
 }
 
 .image {
