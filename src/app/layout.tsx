@@ -45,6 +45,13 @@ export default async function RootLayout({
       )}
     >
       <head>
+        {/* Police Lato pour la carte professionnelle — même méthode que professional-card-astro */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap"
+          rel="stylesheet"
+        />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
