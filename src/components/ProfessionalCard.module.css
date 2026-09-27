@@ -12,7 +12,8 @@
 
 .cardContainer {
   display: flex;
-  width: 650px;
+  width: 100%;
+  max-width: 650px;
   height: auto;
   background: linear-gradient(to right, #024945, #12a89c);
   border-radius: 12px;

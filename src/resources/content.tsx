@@ -67,7 +67,7 @@ const home: Home = {
 const professionalCard = {
   name: person.name,
   position: "Étudiant en informatique",
-  aboutMe: `Salut ! Je m'appelle Youssouf, étudiant en informatique à Lille, France.\nAprès une réorientation depuis un BUT Sciences des Données, je poursuis aujourd'hui un BTS Cybersécurité informatique et Électronique.\nCe parcours m'a permis de développer rigueur, autonomie et goût pour la résolution de problèmes techniques.\nJ'ai mis ces compétences à l'épreuve lors d'un stage chez Konica Minolta, entre support technique et relation client.\nCette expérience m'a appris à communiquer clairement, y compris avec des interlocuteurs non techniques.\nCurieux et motivé, j'aime apprendre de nouveaux outils et sortir de ma zone de confort.\nLa cybersécurité et les réseaux sont les domaines qui m'attirent le plus aujourd'hui.\nJe m'intéresse aussi au développement web, ce portfolio en étant un exemple concret.\nJ'apprécie autant le travail en équipe que la résolution de problèmes en autonomie.\nToujours partant pour de nouvelles opportunités qui me feront progresser !`,
+  aboutMe: `Étudiant en informatique — Lille, France\nBTS Cybersécurité informatique & Électronique\nAncien BUT Sciences des Données\nStage support technique — Konica Minolta\nRigueur, autonomie, curiosité\nPassionné de cybersécurité & réseaux\nIntérêt pour le développement web\nÀ l'aise en équipe comme en autonomie\nToujours partant pour de nouveaux défis\nOuvert à de nouvelles opportunités`,
   linkedin: "https://www.linkedin.com/in/youssouf-ait-amir-96b1132aa",
   github: "https://github.com/TezukaZ0ne",
   cvLink: "/files/CV-Youssouf-Ait-Amir.pdf",
