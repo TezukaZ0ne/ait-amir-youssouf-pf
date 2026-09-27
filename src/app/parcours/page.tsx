@@ -48,7 +48,7 @@ export default function Parcours() {
       />
       <TableOfContents
         structure={structure}
-        about={{ tableOfContent: { display: true, subItems: true } }}
+        about={{ tableOfContent: { display: true, subItems: false } }}
       />
       <Column fillWidth maxWidth={40} paddingTop="24">
         <Heading variant="display-strong-l" marginBottom="24">
