@@ -124,13 +124,18 @@ const parcours: Parcours = {
     title: "Formation",
     institutions: [
       {
-        name: "BTS Cybersécurité informatique et Electronique — Option B : Électronique et Réseaux",
+        name: "BTS Cybersécurité informatique et Électronique — Option B : Électronique et Réseaux",
         description: (
           <>
             LGT Baggio, Lille (59) · 2024 – 2026
             <br />
             Formation exigeant rigueur, méthode et respect des procédures. Développement de
             l'autonomie, du travail en équipe et de la capacité d'analyse.
+            <br />
+            Systèmes et réseaux (Zabbix, Wireshark), installation de réseaux (VLAN, LAN, DNS, DHCP
+            avec Cisco Packet Tracer et PuTTY), programmation (Python, C, SQL/MySQL, JS/TS/PHP),
+            électronique et systèmes embarqués (Node-RED, Arduino IDE), bureautique et ticketing
+            (Microsoft Office, Hubspot CRM), DevOps et déploiement CI/CD (Git, GitHub, Vercel).
           </>
         ),
       },
@@ -141,8 +146,8 @@ const parcours: Parcours = {
             Université de Lille (59) · 2023 – 2024
             <br />
             Statistiques et probabilités : application des lois de probabilités à l'analyse de
-            données. Bureautique : Microsoft Office (Word, Excel, PowerPoint, Access). Capacité
-            d'adaptation et d'organisation face à des exigences académiques variées.
+            données. Informatique décisionnelle : SGBD et reporting (Microsoft SQL Server / Power
+            BI).
           </>
         ),
       },
@@ -159,17 +164,23 @@ const parcours: Parcours = {
       {
         company: "Konica Minolta Business Solutions France",
         timeframe: "19/05 – 28/06/2025 · 6 semaines",
-        role: "Stage PFMP — Support technique & relation client (Saighin-en-Mélantois, 59)",
+        role: "Stage PFMP — Administration réseau & cybersécurité (Sainghin-en-Mélantois, 59)",
         achievements: [
           <>
-            Rigueur et sang-froid sur des interventions à enjeux réels, sans marge d'erreur
-            tolérée.
+            Écoute et adaptation aux besoins spécifiques du client pour proposer des solutions
+            adaptées à son environnement.
           </>,
           <>
-            Prise en main rapide de missions concrètes sur des outils et équipements inconnus.
+            Automatisation en Python de la sauvegarde des configurations réseau (Cisco, HPE Aruba),
+            avec chiffrement des accès.
           </>,
           <>
-            Sens du service, ponctualité et esprit d'équipe reconnus par l'entreprise d'accueil.
+            Renforcement de la sécurité du protocole de supervision réseau (SNMP) sur le site du
+            client, avec compte-rendu.
+          </>,
+          <>
+            Mise en place d'équipements réseau redondants et découverte du rôle des pare-feux en
+            entreprise.
           </>,
         ],
         images: [],
@@ -181,20 +192,56 @@ const parcours: Parcours = {
     title: "Compétences",
     skills: [
       {
-        title: "Sens du contact",
-        description: <>Accueil, écoute et amabilité envers la clientèle.</>,
-        tags: [],
+        title: "Réseaux & systèmes",
+        description: <>Installation, supervision et maintenance des équipements d'un parc informatique.</>,
+        tags: [
+          { name: "VLAN" },
+          { name: "LAN" },
+          { name: "DNS" },
+          { name: "DHCP" },
+          { name: "SNMP" },
+          { name: "Cisco Packet Tracer" },
+          { name: "PuTTY" },
+          { name: "Zabbix" },
+          { name: "Wireshark" },
+        ],
+        images: [],
+      },
+      {
+        title: "Programmation & données",
+        description: <>Scripts d'automatisation, développement web et bases de données.</>,
+        tags: [
+          { name: "Python" },
+          { name: "C" },
+          { name: "SQL / MySQL" },
+          { name: "JS / TS / PHP" },
+          { name: "CLI" },
+          { name: "VS Code" },
+          { name: "Microsoft SQL Server" },
+          { name: "Power BI" },
+        ],
+        images: [],
+      },
+      {
+        title: "Électronique & systèmes embarqués",
+        description: <>Circuits, composants et systèmes embarqués.</>,
+        tags: [{ name: "Node-RED" }, { name: "Arduino IDE" }],
+        images: [],
+      },
+      {
+        title: "DevOps & déploiement",
+        description: <>Versionnement et déploiement continu (CI/CD).</>,
+        tags: [{ name: "Git" }, { name: "GitHub" }, { name: "Vercel" }],
+        images: [],
+      },
+      {
+        title: "Bureautique & ticketing",
+        tags: [{ name: "Microsoft Office" }, { name: "Hubspot CRM" }],
         images: [],
       },
       {
         title: "Rigueur & organisation",
         description: <>Fiabilité dans l'exécution des tâches confiées.</>,
-        tags: [],
-        images: [],
-      },
-      {
-        title: "Esprit d'équipe",
-        description: <>Habitué au travail collectif et à l'entraide.</>,
         tags: [],
         images: [],
       },
@@ -218,7 +265,7 @@ const parcours: Parcours = {
       },
       {
         title: "Langues",
-        description: <>Anglais : B1 certifié · Allemand : A2+ certifié.</>,
+        description: <>Anglais : B1 · Allemand : A2+</>,
         tags: [],
         images: [],
       },
