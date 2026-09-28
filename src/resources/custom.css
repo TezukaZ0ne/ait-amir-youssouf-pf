@@ -67,3 +67,14 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+/* Protection de la photo : pas de clic droit "enregistrer/ouvrir l'image",
+   pas de glisser-déposer, pas de sélection. Couvre les avatars et la photo de profil
+   (les URLs next/image contiennent toujours le nom du fichier). */
+img[src*="avatar"],
+img[src*="profile2"] {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
