@@ -123,7 +123,9 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
+      <RevealFx translateY="16" delay={0.6}>
+        <Projects range={[2]} />
+      </RevealFx>
       <Mailchimp />
     </Column>
   );
