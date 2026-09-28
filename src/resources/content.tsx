@@ -14,6 +14,8 @@ const person: Person = {
   locale: "fr",
 };
 
+const linkedinUrl = "https://www.linkedin.com/in/youssouf-ait-amir/";
+
 const newsletter: Newsletter = {
   display: false,
   title: <></>,
@@ -30,13 +32,12 @@ const social: Social = [
     link: "https://github.com/TezukaZ0ne",
     essential: true,
   },
-  // TODO: ajouter le lien LinkedIn une fois fourni
-  // {
-  //   name: "LinkedIn",
-  //   icon: "linkedin",
-  //   link: "",
-  //   essential: true,
-  // },
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: linkedinUrl,
+    essential: true,
+  },
   {
     name: "Email",
     icon: "email",
@@ -68,7 +69,7 @@ const professionalCard = {
   name: person.name,
   position: "Étudiant en informatique",
   aboutMe: `Étudiant en informatique — Lille, France\nBrevet de Technicien Supérieur Cybersécurité informatique & Électronique\nStage informatique — Konica Minolta Lille\nRigueur, autonomie, curiosité\nPassionné de cybersécurité & réseaux\nIntérêt pour le développement web\nÀ l'aise en équipe comme en autonomie\nToujours partant pour de nouveaux défis, et ouvert à de nouvelles opportunités !`,
-  linkedin: "https://www.linkedin.com/in/youssouf-ait-amir-96b1132aa",
+  linkedin: linkedinUrl,
   github: "https://github.com/TezukaZ0ne",
   cvLink: "/files/CV-Youssouf-Ait-Amir.pdf",
   profileImage: "/images/profile2.webp",
