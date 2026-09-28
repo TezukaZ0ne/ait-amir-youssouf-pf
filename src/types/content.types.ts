@@ -223,13 +223,59 @@ export interface About extends BasePageConfig {
  * Parcours / Compétences page configuration.
  * @description Configuration for the Parcours page: education, professional experience and skills.
  */
+export interface TimelineItem {
+  /** Titre principal (diplôme, poste...) */
+  title: string;
+  /** Établissement / entreprise */
+  place: string;
+  /** Lieu (ville) */
+  location?: string;
+  /** Période affichée dans le badge */
+  period: string;
+  /** Sous-titre (option, durée, rôle...) */
+  subtitle?: string;
+  /** Résumé court sous le titre */
+  summary?: React.ReactNode;
+  /** Liste de points (réalisations, acquis) */
+  bullets?: React.ReactNode[];
+  /** Outils regroupés par domaine, affichés en étiquettes */
+  tools?: Array<{ label: string; tags: string[] }>;
+  /** Lien optionnel vers une page détaillée */
+  link?: { label: string; href: string };
+}
+
+export interface SkillGroup {
+  title: string;
+  icon: string;
+  description?: string;
+  tags: Array<{ name: string; icon?: string }>;
+}
+
 export interface Parcours extends BasePageConfig {
-  /** Work experience section */
-  work: About["work"];
-  /** Studies/education section */
-  studies: About["studies"];
-  /** Skills section (soft skills, languages, technical skills) */
-  skills: About["technical"];
+  profile: {
+    title: string;
+    text: React.ReactNode;
+    facts: Array<{ icon: string; label: string }>;
+    cv: { label: string; href: string };
+  };
+  studies: { display: boolean; title: string; items: TimelineItem[] };
+  work: { display: boolean; title: string; items: TimelineItem[] };
+  skills: { display: boolean; title: string; groups: SkillGroup[] };
+  strengths: {
+    display: boolean;
+    title: string;
+    items: Array<{ icon: string; title: string; description: string }>;
+  };
+  languages: {
+    display: boolean;
+    title: string;
+    items: Array<{ name: string; level: string }>;
+  };
+  interests: {
+    display: boolean;
+    title: string;
+    items: Array<{ icon: string; title: string; description?: string }>;
+  };
 }
 
 /**

@@ -119,156 +119,196 @@ const parcours: Parcours = {
   label: "Parcours & Compétences",
   title: `Parcours & Compétences – ${person.name}`,
   description: `Formation, expérience professionnelle et compétences de ${person.name}`,
+  profile: {
+    title: "Profil",
+    text: (
+      <>
+        Rigoureux, autonome et dynamique, je mets à profit mes compétences en réseaux et en
+        gestion informatique pour assurer le bon fonctionnement, le suivi et la maintenance des
+        équipements d'un parc informatique.
+      </>
+    ),
+    facts: [
+      { icon: "mapPin", label: "Lille (59)" },
+      { icon: "academic", label: "BTS Cybersécurité informatique et Électronique" },
+      { icon: "language", label: "Anglais B1 · Allemand A2+" },
+    ],
+    cv: { label: "Télécharger mon CV", href: "/files/CV-Youssouf-Ait-Amir.pdf" },
+  },
   studies: {
     display: true,
     title: "Formation",
-    institutions: [
+    items: [
       {
-        name: "BTS Cybersécurité informatique et Électronique — Option B : Électronique et Réseaux",
-        description: (
-          <>
-            LGT Baggio, Lille (59) · 2024 – 2026
-            <br />
-            Formation exigeant rigueur, méthode et respect des procédures. Développement de
-            l'autonomie, du travail en équipe et de la capacité d'analyse.
-            <br />
-            Systèmes et réseaux (Zabbix, Wireshark), installation de réseaux (VLAN, LAN, DNS, DHCP
-            avec Cisco Packet Tracer et PuTTY), programmation (Python, C, SQL/MySQL, JS/TS/PHP),
-            électronique et systèmes embarqués (Node-RED, Arduino IDE), bureautique et ticketing
-            (Microsoft Office, Hubspot CRM), DevOps et déploiement CI/CD (Git, GitHub, Vercel).
-          </>
-        ),
+        title: "BTS Cybersécurité informatique et Électronique",
+        subtitle: "Option B : Électronique et Réseaux",
+        place: "LGT Baggio",
+        location: "Lille (59)",
+        period: "2024 – 2026",
+        bullets: [
+          "Formation exigeant rigueur, méthode et respect des procédures.",
+          "Développement de l'autonomie, du travail en équipe et de la capacité d'analyse.",
+        ],
+        tools: [
+          { label: "Systèmes & réseaux", tags: ["Zabbix", "Wireshark"] },
+          {
+            label: "Installation de réseaux",
+            tags: ["VLAN", "LAN", "DNS", "DHCP", "Cisco Packet Tracer", "PuTTY"],
+          },
+          {
+            label: "Programmation",
+            tags: ["Python", "C", "SQL / MySQL", "CLI", "JS / TS / PHP", "VS Code"],
+          },
+          { label: "Électronique & systèmes embarqués", tags: ["Node-RED", "Arduino IDE"] },
+          { label: "Bureautique & ticketing", tags: ["Microsoft Office", "Hubspot CRM"] },
+          { label: "DevOps / CI-CD", tags: ["Git", "GitHub", "Vercel"] },
+        ],
       },
       {
-        name: "BUT Sciences des Données — Réorientation",
-        description: (
-          <>
-            Université de Lille (59) · 2023 – 2024
-            <br />
-            Statistiques et probabilités : application des lois de probabilités à l'analyse de
-            données. Informatique décisionnelle : SGBD et reporting (Microsoft SQL Server / Power
-            BI).
-          </>
-        ),
+        title: "BUT Sciences des Données",
+        subtitle: "Réorientation",
+        place: "Université de Lille",
+        location: "Lille (59)",
+        period: "2023 – 2024",
+        bullets: [
+          "Statistiques et probabilités : application des lois de probabilités à l'analyse de données.",
+          "Informatique décisionnelle : SGBD et reporting (Microsoft SQL Server / Power BI).",
+        ],
       },
       {
-        name: "Baccalauréat Général — Spécialités Mathématiques & NSI",
-        description: <>Lycée Faidherbe, Lille (59) · 2022 – 2023 · Admis</>,
+        title: "Baccalauréat Général",
+        subtitle: "Spécialités Mathématiques & NSI",
+        place: "Lycée Faidherbe",
+        location: "Lille (59)",
+        period: "2022 – 2023",
+        summary: <>Admis.</>,
       },
     ],
   },
   work: {
     display: true,
     title: "Expérience professionnelle",
-    experiences: [
+    items: [
       {
-        company: "Konica Minolta Business Solutions France",
-        timeframe: "19/05 – 28/06/2025 · 6 semaines",
-        role: "Stage PFMP — Administration réseau & cybersécurité (Sainghin-en-Mélantois, 59)",
-        achievements: [
-          <>
-            Écoute et adaptation aux besoins spécifiques du client pour proposer des solutions
-            adaptées à son environnement.
-          </>,
-          <>
-            Automatisation en Python de la sauvegarde des configurations réseau (Cisco, HPE Aruba),
-            avec chiffrement des accès.
-          </>,
-          <>
-            Renforcement de la sécurité du protocole de supervision réseau (SNMP) sur le site du
-            client, avec compte-rendu.
-          </>,
-          <>
-            Mise en place d'équipements réseau redondants et découverte du rôle des pare-feux en
-            entreprise.
-          </>,
+        title: "Stage PFMP — Administration réseau & cybersécurité",
+        subtitle: "6 semaines",
+        place: "Konica Minolta Business Solutions France",
+        location: "Sainghin-en-Mélantois (59)",
+        period: "19/05 – 28/06/2025",
+        bullets: [
+          "Écoute et adaptation aux besoins spécifiques du client pour proposer des solutions adaptées à son environnement.",
+          "Automatisation Python de la sauvegarde des configurations réseau (Cisco, HPE Aruba), avec chiffrement des accès.",
+          "Renforcement de la sécurité du protocole de supervision réseau (SNMP) sur le site du client, avec compte-rendu.",
+          "Mise en place d'équipements réseau redondants et découverte du rôle des pare-feux en entreprise.",
         ],
-        images: [],
+        tools: [{ label: "Technologies", tags: ["Python", "Cisco", "HPE Aruba", "SNMP"] }],
+        link: { label: "Voir le détail du stage", href: "/work/stage-konica-minolta" },
       },
     ],
   },
   skills: {
     display: true,
-    title: "Compétences",
-    skills: [
+    title: "Compétences techniques",
+    groups: [
       {
         title: "Réseaux & systèmes",
-        description: <>Installation, supervision et maintenance des équipements d'un parc informatique.</>,
+        icon: "server",
+        description: "Installation, supervision et maintenance des équipements d'un parc informatique.",
         tags: [
           { name: "VLAN" },
           { name: "LAN" },
           { name: "DNS" },
           { name: "DHCP" },
           { name: "SNMP" },
-          { name: "Cisco Packet Tracer" },
-          { name: "PuTTY" },
+          { name: "Cisco Packet Tracer", icon: "cisco" },
+          { name: "PuTTY", icon: "terminal" },
           { name: "Zabbix" },
-          { name: "Wireshark" },
+          { name: "Wireshark", icon: "wireshark" },
         ],
-        images: [],
       },
       {
         title: "Programmation & données",
-        description: <>Scripts d'automatisation, développement web et bases de données.</>,
+        icon: "code",
+        description: "Scripts d'automatisation, développement web, bases de données et reporting.",
         tags: [
-          { name: "Python" },
-          { name: "C" },
-          { name: "SQL / MySQL" },
-          { name: "JS / TS / PHP" },
-          { name: "CLI" },
+          { name: "Python", icon: "python" },
+          { name: "C", icon: "c" },
+          { name: "SQL / MySQL", icon: "mysql" },
+          { name: "JS / TS / PHP", icon: "typescript" },
+          { name: "CLI", icon: "bash" },
           { name: "VS Code" },
           { name: "Microsoft SQL Server" },
           { name: "Power BI" },
         ],
-        images: [],
       },
       {
         title: "Électronique & systèmes embarqués",
-        description: <>Circuits, composants et systèmes embarqués.</>,
-        tags: [{ name: "Node-RED" }, { name: "Arduino IDE" }],
-        images: [],
+        icon: "chip",
+        description: "Circuits, composants et systèmes embarqués.",
+        tags: [{ name: "Node-RED", icon: "nodered" }, { name: "Arduino IDE", icon: "arduino" }],
       },
       {
         title: "DevOps & déploiement",
-        description: <>Versionnement et déploiement continu (CI/CD).</>,
-        tags: [{ name: "Git" }, { name: "GitHub" }, { name: "Vercel" }],
-        images: [],
+        icon: "rocket",
+        description: "Versionnement du code et déploiement continu (CI/CD).",
+        tags: [
+          { name: "Git", icon: "git" },
+          { name: "GitHub", icon: "github" },
+          { name: "Vercel", icon: "vercel" },
+        ],
       },
       {
         title: "Bureautique & ticketing",
-        tags: [{ name: "Microsoft Office" }, { name: "Hubspot CRM" }],
-        images: [],
+        icon: "document",
+        tags: [{ name: "Microsoft Office" }, { name: "Hubspot CRM", icon: "hubspot" }],
       },
+    ],
+  },
+  strengths: {
+    display: true,
+    title: "Atouts",
+    items: [
       {
+        icon: "shield",
         title: "Rigueur & organisation",
-        description: <>Fiabilité dans l'exécution des tâches confiées.</>,
-        tags: [],
-        images: [],
+        description: "Fiabilité dans l'exécution des tâches confiées.",
       },
       {
+        icon: "bolt",
         title: "Réactivité",
-        description: <>Capacité à gérer plusieurs tâches et à travailler sous rythme soutenu.</>,
-        tags: [],
-        images: [],
+        description: "Capacité à gérer plusieurs tâches et à travailler sous rythme soutenu.",
       },
       {
+        icon: "clock",
         title: "Ponctualité & fiabilité",
-        description: <>Assiduité et respect des horaires.</>,
-        tags: [],
-        images: [],
+        description: "Assiduité et respect des horaires.",
       },
       {
+        icon: "layers",
         title: "Polyvalence",
-        description: <>Adaptation rapide à de nouvelles consignes et environnements.</>,
-        tags: [],
-        images: [],
+        description: "Adaptation rapide à de nouvelles consignes et environnements.",
       },
+    ],
+  },
+  languages: {
+    display: true,
+    title: "Langues",
+    items: [
+      { name: "Anglais", level: "B1" },
+      { name: "Allemand", level: "A2+" },
+    ],
+  },
+  interests: {
+    display: true,
+    title: "Centres d'intérêt",
+    items: [
       {
-        title: "Langues",
-        description: <>Anglais : B1 · Allemand : A2+</>,
-        tags: [],
-        images: [],
+        icon: "trophy",
+        title: "Tennis en compétition",
+        description: "10 ans de pratique, esprit de compétition et dépassement de soi.",
       },
+      { icon: "heart", title: "Passionné de cuisine" },
+      { icon: "sparkles", title: "Veille informatique" },
     ],
   },
 };

@@ -1,6 +1,18 @@
-import { Column, Heading, Meta, Row, Schema, Tag, Text } from "@once-ui-system/core";
+import {
+  Button,
+  Column,
+  Grid,
+  Heading,
+  Icon,
+  Meta,
+  Row,
+  Schema,
+  Tag,
+  Text,
+} from "@once-ui-system/core";
 import { baseURL, parcours, person } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
+import { Timeline } from "@/components/parcours/Timeline";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -17,17 +29,32 @@ export default function Parcours() {
     {
       title: parcours.studies.title,
       display: parcours.studies.display,
-      items: parcours.studies.institutions.map((institution) => institution.name),
+      items: parcours.studies.items.map((item) => item.title),
     },
     {
       title: parcours.work.title,
       display: parcours.work.display,
-      items: parcours.work.experiences.map((experience) => experience.company),
+      items: parcours.work.items.map((item) => item.title),
     },
     {
       title: parcours.skills.title,
       display: parcours.skills.display,
-      items: parcours.skills.skills.map((skill) => skill.title),
+      items: parcours.skills.groups.map((group) => group.title),
+    },
+    {
+      title: parcours.strengths.title,
+      display: parcours.strengths.display,
+      items: [],
+    },
+    {
+      title: parcours.languages.title,
+      display: parcours.languages.display,
+      items: [],
+    },
+    {
+      title: parcours.interests.title,
+      display: parcours.interests.display,
+      items: [],
     },
   ];
 
@@ -50,92 +77,190 @@ export default function Parcours() {
         structure={structure}
         about={{ tableOfContent: { display: true, subItems: false } }}
       />
-      <Column fillWidth maxWidth={40} paddingTop="24">
-        <Heading variant="display-strong-l" marginBottom="24">
-          {parcours.label}
-        </Heading>
+      <Column fillWidth maxWidth={40} paddingTop="24" gap="48">
+        {/* En-tête : profil */}
+        <Column fillWidth gap="20">
+          <Heading variant="display-strong-l">{parcours.label}</Heading>
+          <Column
+            fillWidth
+            gap="20"
+            padding="24"
+            radius="l"
+            background="surface"
+            border="neutral-alpha-medium"
+          >
+            <Text variant="body-default-l" style={{ fontStyle: "italic" }}>
+              {parcours.profile.text}
+            </Text>
+            <Row wrap gap="8">
+              {parcours.profile.facts.map((fact) => (
+                <Tag key={fact.label} size="l" prefixIcon={fact.icon}>
+                  {fact.label}
+                </Tag>
+              ))}
+            </Row>
+            <Row>
+              <Button
+                href={parcours.profile.cv.href}
+                target="_blank"
+                variant="primary"
+                size="m"
+                prefixIcon="download"
+                arrowIcon
+              >
+                {parcours.profile.cv.label}
+              </Button>
+            </Row>
+          </Column>
+        </Column>
 
+        {/* Formation */}
         {parcours.studies.display && (
-          <>
-            <Heading as="h2" id={parcours.studies.title} variant="display-strong-s" marginBottom="m">
+          <Column fillWidth gap="24">
+            <Heading as="h2" id={parcours.studies.title} variant="display-strong-s">
               {parcours.studies.title}
             </Heading>
-            <Column fillWidth gap="l" marginBottom="40">
-              {parcours.studies.institutions.map((institution, index) => (
-                <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                  <Text id={institution.name} variant="heading-strong-l">
-                    {institution.name}
-                  </Text>
-                  <Text variant="body-default-m" onBackground="neutral-weak">
-                    {institution.description}
-                  </Text>
-                </Column>
-              ))}
-            </Column>
-          </>
+            <Timeline items={parcours.studies.items} />
+          </Column>
         )}
 
+        {/* Expérience */}
         {parcours.work.display && (
-          <>
-            <Heading as="h2" id={parcours.work.title} variant="display-strong-s" marginBottom="m">
+          <Column fillWidth gap="24">
+            <Heading as="h2" id={parcours.work.title} variant="display-strong-s">
               {parcours.work.title}
             </Heading>
-            <Column fillWidth gap="l" marginBottom="40">
-              {parcours.work.experiences.map((experience, index) => (
-                <Column key={`${experience.company}-${index}`} fillWidth>
-                  <Row fillWidth horizontal="between" vertical="end" marginBottom="4" wrap>
-                    <Text id={experience.company} variant="heading-strong-l">
-                      {experience.company}
-                    </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {experience.timeframe}
-                    </Text>
-                  </Row>
-                  <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                    {experience.role}
-                  </Text>
-                  <Column as="ul" gap="12">
-                    {experience.achievements.map((achievement, i) => (
-                      <Text as="li" variant="body-default-m" key={`${experience.company}-${i}`}>
-                        {achievement}
-                      </Text>
-                    ))}
-                  </Column>
-                </Column>
-              ))}
-            </Column>
-          </>
+            <Timeline items={parcours.work.items} />
+          </Column>
         )}
 
+        {/* Compétences techniques */}
         {parcours.skills.display && (
-          <>
-            <Heading as="h2" id={parcours.skills.title} variant="display-strong-s" marginBottom="m">
+          <Column fillWidth gap="24">
+            <Heading as="h2" id={parcours.skills.title} variant="display-strong-s">
               {parcours.skills.title}
             </Heading>
-            <Column fillWidth gap="l">
-              {parcours.skills.skills.map((skill, index) => (
-                <Column key={`${skill.title}-${index}`} fillWidth gap="4">
-                  <Text id={skill.title} variant="heading-strong-l">
-                    {skill.title}
-                  </Text>
-                  {skill.description && (
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
+            <Grid columns="2" s={{ columns: 1 }} gap="16" fillWidth>
+              {parcours.skills.groups.map((group) => (
+                <Column
+                  key={group.title}
+                  fillWidth
+                  gap="16"
+                  padding="24"
+                  radius="l"
+                  background="surface"
+                  border="neutral-alpha-medium"
+                >
+                  <Row gap="12" vertical="center">
+                    <Icon name={group.icon} size="m" onBackground="brand-weak" />
+                    <Text id={group.title} variant="heading-strong-m">
+                      {group.title}
+                    </Text>
+                  </Row>
+                  {group.description && (
+                    <Text variant="body-default-s" onBackground="neutral-weak">
+                      {group.description}
                     </Text>
                   )}
-                  {skill.tags && skill.tags.length > 0 && (
-                    <Row wrap gap="8" paddingTop="8">
-                      {skill.tags.map((tag, tagIndex) => (
-                        <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
-                          {tag.name}
-                        </Tag>
-                      ))}
-                    </Row>
+                  <Row wrap gap="8">
+                    {group.tags.map((tag) => (
+                      <Tag key={`${group.title}-${tag.name}`} size="m" prefixIcon={tag.icon}>
+                        {tag.name}
+                      </Tag>
+                    ))}
+                  </Row>
+                </Column>
+              ))}
+            </Grid>
+          </Column>
+        )}
+
+        {/* Atouts */}
+        {parcours.strengths.display && (
+          <Column fillWidth gap="24">
+            <Heading as="h2" id={parcours.strengths.title} variant="display-strong-s">
+              {parcours.strengths.title}
+            </Heading>
+            <Grid columns="2" s={{ columns: 1 }} gap="16" fillWidth>
+              {parcours.strengths.items.map((item) => (
+                <Row
+                  key={item.title}
+                  fillWidth
+                  gap="16"
+                  vertical="start"
+                  padding="20"
+                  radius="l"
+                  background="surface"
+                  border="neutral-alpha-medium"
+                >
+                  <Icon name={item.icon} size="m" onBackground="brand-weak" />
+                  <Column gap="4" flex={1} minWidth={0}>
+                    <Text variant="heading-strong-s">{item.title}</Text>
+                    <Text variant="body-default-s" onBackground="neutral-weak">
+                      {item.description}
+                    </Text>
+                  </Column>
+                </Row>
+              ))}
+            </Grid>
+          </Column>
+        )}
+
+        {/* Langues */}
+        {parcours.languages.display && (
+          <Column fillWidth gap="24">
+            <Heading as="h2" id={parcours.languages.title} variant="display-strong-s">
+              {parcours.languages.title}
+            </Heading>
+            <Row wrap gap="16">
+              {parcours.languages.items.map((language) => (
+                <Row
+                  key={language.name}
+                  gap="12"
+                  vertical="center"
+                  paddingY="12"
+                  paddingX="20"
+                  radius="l"
+                  background="surface"
+                  border="neutral-alpha-medium"
+                >
+                  <Icon name="language" size="s" onBackground="brand-weak" />
+                  <Text variant="heading-strong-s">{language.name}</Text>
+                  <Tag size="m">{language.level}</Tag>
+                </Row>
+              ))}
+            </Row>
+          </Column>
+        )}
+
+        {/* Centres d'intérêt */}
+        {parcours.interests.display && (
+          <Column fillWidth gap="24" paddingBottom="40">
+            <Heading as="h2" id={parcours.interests.title} variant="display-strong-s">
+              {parcours.interests.title}
+            </Heading>
+            <Grid columns="3" m={{ columns: 2 }} s={{ columns: 1 }} gap="16" fillWidth>
+              {parcours.interests.items.map((item) => (
+                <Column
+                  key={item.title}
+                  fillWidth
+                  gap="8"
+                  padding="20"
+                  radius="l"
+                  background="surface"
+                  border="neutral-alpha-medium"
+                >
+                  <Icon name={item.icon} size="m" onBackground="brand-weak" />
+                  <Text variant="heading-strong-s">{item.title}</Text>
+                  {item.description && (
+                    <Text variant="body-default-s" onBackground="neutral-weak">
+                      {item.description}
+                    </Text>
                   )}
                 </Column>
               ))}
-            </Column>
-          </>
+            </Grid>
+          </Column>
         )}
       </Column>
     </Column>
