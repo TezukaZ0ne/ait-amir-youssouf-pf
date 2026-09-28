@@ -62,8 +62,12 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({
           </div>
         </div>
         <div className={styles.image}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={profileImage} alt={name} />
+          <div
+            className={styles.photo}
+            role="img"
+            aria-label={name}
+            style={{ backgroundImage: `url(${profileImage})` }}
+          />
         </div>
       </div>
     </div>

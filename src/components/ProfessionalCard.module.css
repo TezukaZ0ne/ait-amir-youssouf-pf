@@ -56,13 +56,17 @@
   padding: 30px;
 }
 
-.image img {
+.photo {
   width: 200px;
   height: 200px;
   border-radius: 100%;
-  text-align: center;
-  object-fit: cover;
-  object-position: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
 }
 
 .icons {
@@ -94,7 +98,7 @@
     margin-top: 12px;
     margin-bottom: 12px;
   }
-  .image img {
+  .photo {
     width: 90px;
     height: 90px;
   }
