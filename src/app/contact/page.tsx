@@ -32,7 +32,7 @@ export default function Contact() {
       <Column fillWidth paddingTop="24" gap="24">
         <Heading variant="display-strong-l">{contact.label}</Heading>
         <Text variant="body-default-l" onBackground="neutral-weak">
-          N'hésite pas à me contacter par l'un de ces moyens.
+          N'hésitez pas à me contacter par l'un de ces moyens.
         </Text>
 
         <Column fillWidth gap="16" marginTop="16">
