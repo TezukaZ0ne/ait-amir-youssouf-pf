@@ -2,7 +2,7 @@
 title: "Projet annuel — BTS Cybersécurité informatique et Électronique"
 order: 2
 publishedAt: "2025-09-01"
-summary: "Projet mené en 2e année de BTS Cybersécurité informatique et Électronique, LGT Baggio (Lille)."
+summary: "Instrumentation d'un banc d'essai pour voitures radiocommandées (club FVRC – Mini RC de Marigny) : Arduino, RFID PN532, écran Nextion, serveur Raspberry Pi et VPN Tailscale."
 images: []
 team:
   - name: "Youssouf Ait Amir"
@@ -12,6 +12,25 @@ team:
 
 ## Contexte
 
-Projet annuel réalisé en 2e année de BTS Cybersécurité informatique et Électronique — Option B : Électronique et Réseaux, au LGT Baggio (Lille).
+Projet annuel réalisé en binôme (avec Edouard Duchateau) en 2e année de BTS Cybersécurité informatique et Électronique — Option B : Électronique et Réseaux, au LGT Baggio (Lille), année 2025-2026. Le club Mini RC de Marigny, affilié à la FVRC, souhaite tester et optimiser ses voitures radiocommandées avant chaque course : le banc d'essai mesure la vitesse de rotation des roues, la tension et le courant, identifie chaque véhicule par RFID, puis enregistre, affiche et transmet les résultats.
 
-*Cette section est à compléter : décris-moi le sujet du projet, ton rôle, les outils/technologies utilisés et le résultat obtenu, et je mettrai cette page à jour.*
+## Ma partie
+
+Mise en œuvre du module NFC/RFID PN532 (bus I2C, bibliothèque Adafruit_PN532) : lecture fiable de l'UID des tags Mifare Classic 1K avec un temps de réponse inférieur à 200 ms.
+
+## Réalisations
+
+- **Serveur** : Raspberry Pi (Apache, PHP, MariaDB, phpMyAdmin) avec contrôle d'accès par badge, journalisation et interface web actualisée toutes les 5 secondes.
+- **Réseau** : accès distant sécurisé par VPN Tailscale (WireGuard).
+- **Affichage local** : écran tactile Nextion NX3224T028.
+- **Mesure et suite** : capteur de vitesse LM393 (jusqu'à 30 000 tr/min), tableaux de bord Grafana et liaison sans fil par module GSM A6, en cours de mise en œuvre à la date du rapport.
+
+## Technologies
+
+Arduino · C++ · I2C / UART / SPI · RFID PN532 · Nextion · Raspberry Pi · Apache · PHP · MariaDB · Python · Tailscale · Grafana
+
+## Rapport de projet
+
+Le rapport complet détaille le contexte, l'architecture, les réalisations techniques, les difficultés rencontrées et les perspectives.
+
+<PdfViewer src="/files/Rapport-de-Projet-BTS-Youssouf-Ait-Amir.pdf" title="Rapport de projet BTS CIEL — Youssouf Ait Amir & Edouard Duchateau" />
