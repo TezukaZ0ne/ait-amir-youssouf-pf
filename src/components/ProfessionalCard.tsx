@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
 import styles from "./ProfessionalCard.module.css";
 
@@ -7,7 +7,6 @@ interface ProfessionalCardProps {
   position: string;
   aboutMe: string;
   linkedin: string;
-  github: string;
   cvLink: string;
   profileImage: string;
 }
@@ -17,7 +16,6 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({
   position,
   aboutMe,
   linkedin,
-  github,
   cvLink,
   profileImage,
 }) => {
@@ -38,16 +36,6 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({
               aria-label="LinkedIn"
             >
               <FaLinkedin size={28} />
-            </a>
-            <a
-              href={github}
-              className={styles.hoverText}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="GitHub"
-              aria-label="GitHub"
-            >
-              <FaGithub size={28} />
             </a>
             <a
               href={cvLink}

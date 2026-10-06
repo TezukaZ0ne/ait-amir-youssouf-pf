@@ -27,12 +27,6 @@ const social: Social = [
   // Import new icons in /once-ui/icons.ts
   // Set essentials: true for links you want to show on the about page
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/TezukaZ0ne",
-    essential: true,
-  },
-  {
     name: "LinkedIn",
     icon: "linkedin",
     link: linkedinUrl,
@@ -70,7 +64,6 @@ const professionalCard = {
   position: "Étudiant en informatique",
   aboutMe: `Étudiant en informatique — Lille, France\nBrevet de Technicien Supérieur Cybersécurité informatique & Électronique\nStage informatique — Konica Minolta Lille\nRigueur, autonomie, curiosité\nPassionné de cybersécurité & réseaux\nIntérêt pour le développement web\nÀ l'aise en équipe comme en autonomie\nToujours partant pour de nouveaux défis, et ouvert à de nouvelles opportunités !`,
   linkedin: linkedinUrl,
-  github: "https://github.com/TezukaZ0ne",
   cvLink: "/files/CV-Youssouf-Ait-Amir.pdf",
   profileImage: "/images/profile2.webp",
 };
