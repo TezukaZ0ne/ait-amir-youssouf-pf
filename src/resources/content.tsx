@@ -190,11 +190,11 @@ const parcours: Parcours = {
         location: "Sainghin-en-Mélantois (59)",
         period: "19/05 – 28/06/2025",
         bullets: [
-          "Écoute et adaptation aux besoins spécifiques du client pour proposer des solutions adaptées à son environnement.",
           "Automatisation Python de la sauvegarde des configurations réseau (Cisco, HPE Aruba), avec chiffrement des accès.",
           "Renforcement de la sécurité du protocole de supervision réseau (SNMP) sur le site du client, avec compte-rendu.",
           "Mise en place d'équipements réseau redondants et découverte du rôle des pare-feux en entreprise.",
           "Découverte de l'électronique appliqué à l'informatique : serveur lame HPE Synergy, onduleur Eaton (RS232 / USB) et analyse de trames avec Wireshark.",
+          "Écoute et adaptation aux besoins spécifiques du client pour proposer des solutions adaptées à son environnement.",
         ],
         tools: [{ label: "Technologies", tags: ["Python", "Cisco", "HPE Aruba", "SNMP", "Wireshark"] }],
         link: { label: "Voir le détail du stage", href: "/work/stage-konica-minolta" },
