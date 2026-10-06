@@ -1,6 +1,7 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import React, { ReactNode } from "react";
 import { slugify as transliterate } from "transliteration";
+import { PdfViewer } from "@/components/PdfViewer";
 
 import {
   Heading,
@@ -202,6 +203,7 @@ const components = {
   Icon,
   Media,
   SmartLink,
+  PdfViewer,
 };
 
 type CustomMDXProps = MDXRemoteProps & {
