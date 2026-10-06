@@ -196,7 +196,7 @@ const parcours: Parcours = {
           "Découverte de l'électronique appliqué à l'informatique : serveur lame HPE Synergy, onduleur Eaton (RS232 / USB) et analyse de trames avec Wireshark.",
           "Écoute et adaptation aux besoins spécifiques du client pour proposer des solutions adaptées à son environnement.",
         ],
-        tools: [{ label: "Technologies", tags: ["Python", "Cisco", "HPE Aruba", "SNMP", "Wireshark"] }],
+        tools: [{ label: "Technologies", tags: ["Python", "SSH", "SNMPv3", "VLAN", "VPN", "Chiffrement", "RS232"] }],
         link: { label: "Voir le détail du stage", href: "/work/stage-konica-minolta" },
       },
     ],
