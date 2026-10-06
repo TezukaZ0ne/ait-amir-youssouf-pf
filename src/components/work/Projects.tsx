@@ -15,7 +15,11 @@ export function Projects({ range, exclude }: ProjectsProps) {
     allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
   }
 
+  // Ordre manuel (champ `order` du frontmatter, croissant) puis date décroissante
   const sortedProjects = allProjects.sort((a, b) => {
+    const oa = a.metadata.order ?? Number.MAX_SAFE_INTEGER;
+    const ob = b.metadata.order ?? Number.MAX_SAFE_INTEGER;
+    if (oa !== ob) return oa - ob;
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 
