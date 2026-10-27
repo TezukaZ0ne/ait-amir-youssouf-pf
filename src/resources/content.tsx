@@ -61,8 +61,8 @@ const home: Home = {
 
 const professionalCard = {
   name: person.name,
-  position: "Étudiant en informatique",
-  aboutMe: `Étudiant en informatique — Lille, France\nBrevet de Technicien Supérieur Cybersécurité informatique & Électronique\nStage informatique — Konica Minolta Lille\nRigueur, autonomie, curiosité\nPassionné de cybersécurité & réseaux\nIntérêt pour le développement web\nÀ l'aise en équipe comme en autonomie\nToujours partant pour de nouveaux défis, et ouvert à de nouvelles opportunités !`,
+  position: "Recherche Alternance Informatique",
+  aboutMe: `Recherche Alternance Informatique — Lille, France\nBrevet de Technicien Supérieur Cybersécurité informatique & Électronique\nStage informatique — Konica Minolta Lille\nRigueur, autonomie, curiosité\nPassionné de cybersécurité & réseaux\nIntérêt pour le développement web\nÀ l'aise en équipe comme en autonomie\nToujours partant pour de nouveaux défis, et ouvert à de nouvelles opportunités !`,
   linkedin: linkedinUrl,
   cvLink: "/files/CV-Youssouf-Ait-Amir.pdf",
   profileImage: "/images/profile2.webp",
