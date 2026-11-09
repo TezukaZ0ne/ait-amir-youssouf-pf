@@ -125,7 +125,7 @@ const parcours: Parcours = {
     facts: [
       { icon: "mapPin", label: "Lille (59)" },
       { icon: "academic", label: "BTS Cybersécurité informatique et Électronique" },
-      { icon: "language", label: "Anglais B1 · Allemand A2+" },
+      { icon: "language", label: "Anglais B2 · Allemand A2" },
     ],
     cv: { label: "Télécharger mon CV", href: "/files/CV-Youssouf-Ait-Amir.pdf" },
   },
@@ -229,7 +229,10 @@ const parcours: Parcours = {
           { name: "Python", icon: "python" },
           { name: "C", icon: "c" },
           { name: "SQL / MySQL", icon: "mysql" },
+          { name: "MariaDB" },
+          { name: "HTML / CSS" },
           { name: "JS / TS / PHP", icon: "typescript" },
+          { name: "Lua" },
           { name: "CLI", icon: "bash" },
           { name: "VS Code" },
           { name: "Microsoft SQL Server" },
@@ -289,8 +292,8 @@ const parcours: Parcours = {
     display: true,
     title: "Langues",
     items: [
-      { name: "Anglais", level: "B1" },
-      { name: "Allemand", level: "A2+" },
+      { name: "Anglais", level: "B2" },
+      { name: "Allemand", level: "A2" },
     ],
   },
   interests: {
