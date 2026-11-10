@@ -219,6 +219,7 @@ const parcours: Parcours = {
           { name: "PuTTY", icon: "terminal" },
           { name: "Zabbix" },
           { name: "Wireshark", icon: "wireshark" },
+          { name: "Microsoft Azure" },
         ],
       },
       {
