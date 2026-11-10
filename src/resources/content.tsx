@@ -232,7 +232,6 @@ const parcours: Parcours = {
           { name: "MariaDB" },
           { name: "HTML / CSS" },
           { name: "JS / TS / PHP", icon: "typescript" },
-          { name: "Lua" },
           { name: "CLI", icon: "bash" },
           { name: "VS Code" },
           { name: "Microsoft SQL Server" },
